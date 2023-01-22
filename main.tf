@@ -14,6 +14,9 @@ module "compute" {
   source = "./compute"
 }
 
+module "iam" {
+  source = "./iam"
+}
 
 resource "google_compute_instance" "yucatan-vm-prime" {
   provider                  = google.yucatan
