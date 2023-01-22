@@ -1,2 +1,3 @@
-# terraform-associate
-Terraform Associate Learning
+# Terraform Associate Certification
+
+Learning for Terraform Associate Certification
