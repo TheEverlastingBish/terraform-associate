@@ -13,7 +13,7 @@ resource "google_pubsub_subscription" "nues-web-prod-bqsub" {
   }
 
   bigquery_config {
-    table = "${google_bigquery_table.test.project}:${google_bigquery_table.test.dataset_id}.${google_bigquery_table.test.table_id}"
+    table = "${google_bigquery_table.nues-source-web-prod-table.project}:${google_bigquery_table.nues-source-web-prod-table.dataset_id}.${google_bigquery_table.nues-source-web-prod-table.table_id}"
   }
 
   depends_on = [
