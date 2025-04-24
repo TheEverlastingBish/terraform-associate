@@ -1,8 +1,8 @@
-module "big-query" {
+module "big_query" {
   source = "./big-query"
 }
 
-module "cloud-storage" {
+module "cloud_storage" {
   source = "./cloud-storage"
 }
 
@@ -18,11 +18,11 @@ module "iam" {
   source = "./iam"
 }
 
-resource "google_compute_instance" "yucatan-vm-prime" {
-  provider                  = google.yucatan
-  name                      = "yucatan-vm-prime"
+resource "google_compute_instance" "crimson-vm-prime" {
+  provider                  = google.crimson
+  name                      = "crimson-vm-prime"
   machine_type              = "e2-medium"
-  tags                      = ["foo", "bar"]
+  tags                      = ["scope", "dev"]
   allow_stopping_for_update = true
   labels = {
     env = "production"
@@ -44,7 +44,7 @@ resource "google_compute_instance" "yucatan-vm-prime" {
   }
 
   metadata = {
-    ssh-keys = "${var.gcp_tf_sa}:${file(var.gcp_creds)}"
+    ssh-keys = "${var.gcp_tf_sa}:${file(var.gcp_credentials)}"
   }
 
   metadata_startup_script = <<-EOF

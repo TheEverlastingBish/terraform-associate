@@ -2,14 +2,14 @@
 /*
 resource "null_resource" "vm-terminate" {
   triggers = {
-    public_ip = google_compute_instance.yucatan-vm-prime.network_interface[0].network_ip
+    public_ip = google_compute_instance.crimson-vm-prime.network_interface[0].network_ip
   }
 
   connection {
     type        = "ssh"
     user        = var.gcp_tf_sa
-    host        = google_compute_instance.yucatan-vm-prime.network_interface[0].network_ip
-    private_key = file(var.gcp_creds)
+    host        = google_compute_instance.crimson-vm-prime.network_interface[0].network_ip
+    private_key = file(var.gcp_credentials)
     timeout     = "2m"
   }
 
